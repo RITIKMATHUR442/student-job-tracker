@@ -54,6 +54,18 @@ app.get('/api/jobs', async (req, res) => {
   }
 });
 
+
+app.get('/api/jobs/:id', async (req, res) => {
+  try {
+    const job = await Job.findById(req.params.id);
+    if (!job) return res.status(404).json({ error: 'Job not found' });
+    res.json(job);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 // 3. Update Job (Using PUT)
 app.put('/api/jobs/:id', async (req, res) => {
   try {
