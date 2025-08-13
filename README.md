@@ -47,10 +47,3 @@ Built using **React.js** for the frontend and **Node.js + Express + MongoDB** fo
 
 ---
 
-## ⚙️ Installation
-
-### Backend
-```bash
-cd backend
-npm install
-npm start
